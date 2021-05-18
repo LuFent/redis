@@ -9,11 +9,19 @@ unints = ['b','Kb','Mb','Gb']
 #mem_counter = collections.Counter()
 
 def main(mask_list, n1,n2):
-    r = redis.Redis(db = n1)    
+    r = redis.Redis(
+    db = n1,
+    host = host,
+    port = port
+        )    
 
     for key in r.scan_iter():
 
-        r = redis.Redis(db = n1)
+        r = redis.Redis(
+        db = 0,
+        host = host,
+        port = port
+                )
 
         is_special = 0
 
@@ -35,7 +43,11 @@ def main(mask_list, n1,n2):
                     if key[i + 1] == ':' and key[i + 2].isdigit():
                         break
 
-        r = redis.Redis(db = n2)
+        r = redis.Redis(
+            db = n2,
+            host = host,
+            port = port
+            )
 
         r.incr(short_key,mem)
         r.incr('amount__of__' + short_key ,1)
@@ -46,10 +58,17 @@ def main(mask_list, n1,n2):
 
 masks = []
 
-r = redis.Redis(db = 0)
+
 
 num_1 = 0
 num_2 = 1
+
+print('Enter port (6379 - default)')
+port = input()
+print('Enter host ')
+host = raw_input()
+
+
 
 while 1:
     print('1 - Enter analyzed db number, default number = 0')
@@ -57,11 +76,12 @@ while 1:
     print('3 - Enter new special mask')
     print('4 - start analysis')
     print('5 - output db')
-    print('6 - exit')
+    print('6 - Enter Host and Port')
+    print('7 - exit')
     choose = input()
     if (choose == 1):
         num_1 = input()
-        r = redis.Redis(db = num_1)
+
 
     if (choose == 2):
         num_2 = input()
@@ -88,7 +108,12 @@ while 1:
         m = input()
         m-= 1
 
-        r = redis.Redis(db = x)
+        r = redis.Redis(
+           db = x,
+           host = host,
+           port = port
+            )
+
         key_list = sorted(r.scan_iter())
         print('===================')
         print('amount of every key ')
