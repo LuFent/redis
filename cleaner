@@ -1,0 +1,5 @@
+import reids
+r = redis.Redis(db = 1)
+
+for key in r.scan_iter():
+    r.delete(key)
