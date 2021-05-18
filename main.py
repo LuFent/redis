@@ -63,21 +63,22 @@ masks = []
 num_1 = 0
 num_2 = 1
 
-print('Enter port (6379 - default)')
-port = input()
-print('Enter host ')
-host = raw_input()
+#print('Enter port (6379 - default)')
+port = 6379
+#print('Enter host ')
+host = '127.0.0.1'
 
 
 
 while 1:
     print('1 - Enter analyzed db number, default number = 0')
     print('2 - Enter db number, to wich the information will be written, default number = 1')
-    print('3 - Enter new special mask')
-    print('4 - start analysis')
-    print('5 - output db')
-    print('6 - Enter Host and Port')
-    print('7 - exit')
+    print('3 - Change Port')
+    print('4 - Change Host')
+    print('5 - Enter new special mask')
+    print('6 - start analysis')
+    print('7 - output db')
+    print('8 - exit')
     choose = input()
     if (choose == 1):
         num_1 = input()
@@ -85,19 +86,24 @@ while 1:
 
     if (choose == 2):
         num_2 = input()
-        
-
+    
     if (choose == 3):
+        port = input()
+
+    if (choose == 4):
+        host = raw_input()
+
+    if (choose == 5):
         mask = raw_input()
         masks.append(mask)
         print('Mask added')
         print('Current special masks list: ')
         print(masks)
             
-    if (choose == 4):
+    if (choose == 6):
         main(masks,num_1,num_2)
     
-    if(choose == 5):
+    if(choose == 7):
         print('Enter db number to output')
         x = input()
         print('Enter Units')
@@ -128,7 +134,7 @@ while 1:
         
         print('===================')
 
-    if (choose == 6):
+    if (choose == 8):
         break
 
 
