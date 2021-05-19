@@ -9,7 +9,6 @@ masks = []
 port = 6379
 host = '127.0.0.1'
 
-verbo
 
 for i in range(1,len(sys.argv),2):
     if sys.argv[i] == '-db':
@@ -38,6 +37,7 @@ def main(mask_list, n1,n2):
 
     for key in r.scan_iter():
 
+        key = str(key)
         r = redis.Redis(
         db = 0,
         host = host,
@@ -54,7 +54,7 @@ def main(mask_list, n1,n2):
                 is_special = 1
 
         if not is_special:
-            if str(key[0]).isdigit():
+            if key[0].isdigit():
                 short_key = key[0]
 
             else:
