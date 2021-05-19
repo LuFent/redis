@@ -9,6 +9,7 @@ masks = []
 port = 6379
 host = '127.0.0.1'
 
+verbo
 
 for i in range(1,len(sys.argv),2):
     if sys.argv[i] == '-db':
@@ -53,7 +54,7 @@ def main(mask_list, n1,n2):
                 is_special = 1
 
         if not is_special:
-            if key[0].isdigit():
+            if str(key[0]).isdigit():
                 short_key = key[0]
 
             else:
@@ -72,8 +73,7 @@ def main(mask_list, n1,n2):
         r.incr(short_key,mem)
         r.incr('amount__of__' + short_key ,1)
 
-        #counter[short_key] += 1
-        #mem_counter[short_key] += r.execute_command("MEMORY USAGE",key)
+    
     print('analysis ended')
 
 
