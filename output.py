@@ -23,7 +23,11 @@ units = ['b','Kb','Mb','Gb']
 
 m = units.index(unit)
 
-r = redis.Redis(db = x)
+r = redis.Redis(
+            db = x,
+            host = host,
+            port = port
+            )
 
 key_list = sorted(r.scan_iter())
 print('===================')
@@ -39,3 +43,4 @@ for key in key_list:
         print(key +  '  :  ' + str(float(r.get(key)) / (1024 ** m)) + ' ' + units[m])
 
 print('===================')
+
