@@ -70,8 +70,8 @@ def main(mask_list, n1,n2):
             port = port
             )
         if (isinstance(short_key,str)):
-            r.incr(short_key,mem)
-            r.incr('amount__of__' + short_key ,1)
+            r.incrby(short_key,mem)
+            r.incrby('amount__of__' + short_key ,1)
 
     
     print('analysis ended')
