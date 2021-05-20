@@ -69,9 +69,9 @@ def main(mask_list, n1,n2):
             host = host,
             port = port
             )
-
-        r.incr(short_key,mem)
-        r.incr('amount__of__' + short_key ,1)
+        if (isinstance(short_key,str)):
+            r.incr(short_key,mem)
+            r.incr('amount__of__' + short_key ,1)
 
     
     print('analysis ended')
