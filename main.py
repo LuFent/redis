@@ -30,19 +30,22 @@ for i in range(1,len(sys.argv),2):
 
 def main(mask_list, n1,n2):
     r = redis.Redis(
-    db = n1,
-    host = host,
-    port = port
-        )    
+        db = n1,
+        host = host,
+        port = port,
+        decode_responses=True
+        )
+
+    r_dst = redis.Redis(
+        db = n2,
+        host = host,
+        port = port,
+        decode_responses=True
+                )
 
     for key in r.scan_iter():
 
         key = str(key)
-        r = redis.Redis(
-        db = 0,
-        host = host,
-        port = port
-                )
 
         is_special = 0
 
@@ -55,23 +58,19 @@ def main(mask_list, n1,n2):
 
         if not is_special:
             if key[0].isdigit():
-                short_key = key[0]
+                short_key = str(key[0])
 
             else:
                 short_key = ''
-                for i in range(len(key)):
+                for i in range(len(key) - 2):
                     short_key += key[i]
                     if key[i + 1] == ':' and key[i + 2].isdigit():
                         break
 
-        r = redis.Redis(
-            db = n2,
-            host = host,
-            port = port
-            )
 
-        r.incr(short_key,mem)
-        r.incr('amount__of__' + short_key ,1)
+        if (isinstance(short_key, str)):
+            r_dst.incrby(short_key,mem)
+            r_dst.incrby('amount__of__' + short_key ,1)
 
     
     print('analysis ended')
