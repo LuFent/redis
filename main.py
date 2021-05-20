@@ -55,7 +55,7 @@ def main(mask_list, n1,n2):
 
         if not is_special:
             if key[0].isdigit():
-                short_key = key[0]
+                short_key = str(key[0])
 
             else:
                 short_key = ''
@@ -69,9 +69,9 @@ def main(mask_list, n1,n2):
             host = host,
             port = port
             )
-        if (isinstance(short_key,str)):
-            r.incr(short_key,mem)
-            r.incr('amount__of__' + short_key ,1)
+        if (type(short_key) ==  str)):
+            r.incrby(short_key,mem)
+            r.incrby('amount__of__' + short_key ,1)
 
     
     print('analysis ended')
