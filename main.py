@@ -38,7 +38,6 @@ def main(mask_list, n1,n2):
     for key in r.scan_iter():
 
         key = str(key)
-        print(key)
         r = redis.Redis(
         db = n1,
         host = host,
