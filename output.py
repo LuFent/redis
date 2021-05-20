@@ -33,14 +33,14 @@ key_list = sorted(r.scan_iter())
 print('===================')
 print('amount of every key ')
 for key in key_list:   
-    if key[0:12] == 'amount__of__':
-        print(key[12:len(key)] + '  :  ' + r.get(key))
+    if key[0:12] == b'amount__of__':
+        print(key[12:len(key)] + b'  :  ' + r.get(key))
 
 print()
-print('memory usage of keys ')
+print(b'memory usage of keys ')
 for key in key_list:   
-    if not key[0:12] == 'amount__of__':
-        print(key +  '  :  ' + str(float(r.get(key)) / (1024 ** m)) + ' ' + units[m])
+    if not key[0:12] == b'amount__of__':
+        print(key +  b'  :  ' + str(float(r.get(key)) / (1024 ** m)) + ' ' + units[m])
 
 print('===================')
 
