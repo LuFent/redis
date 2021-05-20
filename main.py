@@ -69,7 +69,7 @@ def main(mask_list, n1,n2):
             host = host,
             port = port
             )
-        if (type(short_key) ==  str)):
+        if (type(short_key) ==  str):
             r.incrby(short_key,mem)
             r.incrby('amount__of__' + short_key ,1)
 
