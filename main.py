@@ -38,8 +38,9 @@ def main(mask_list, n1,n2):
     for key in r.scan_iter():
 
         key = str(key)
+        print(key)
         r = redis.Redis(
-        db = 0,
+        db = n1,
         host = host,
         port = port
                 )
@@ -59,7 +60,7 @@ def main(mask_list, n1,n2):
 
             else:
                 short_key = ''
-                for i in range(len(key)):
+                for i in range(len(key) - 2):
                     short_key += key[i]
                     if key[i + 1] == ':' and key[i + 2].isdigit():
                         break
