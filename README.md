@@ -1,6 +1,6 @@
 ### Redis database analysator
 
-## main
+## main.py
 
 ```
 $ python main.py -db <db number> -db_rez <db to write rezult number> -h <host default - 127.0.0.1 > -p <port default - 6379> -mask <add special mask>
@@ -19,7 +19,7 @@ $ python main.py -db 1 -db_rez 10 -h 127.0.0.1 -p 6379 -mask eml -mask qwe.zxc
 
 &nbsp;
 
-## output
+## output.py
 
 
 ```
