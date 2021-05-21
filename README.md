@@ -7,7 +7,7 @@ $ python main.py -db <db number> -db_rez <db to write rezult number> -h <host de
 ```  
 Keys in any order
 
-*for example, running:*
+*For example, running:*
 
 
 ```    
