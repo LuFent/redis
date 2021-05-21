@@ -1,8 +1,8 @@
 ## main
 
 
-***$ python main.py -db <db number> -db_rez <db to write rezult number> -h <host default - 127.0.0.1 > -p <port default - 6379> -mask <add special mask>
-keys in any order***  
+***$ python main.py -db <db number> -db_rez <db to write rezult number> -h <host default - 127.0.0.1 > -p <port default - 6379> -mask <add special mask>***  
+keys in any order
 
 
     
