@@ -1,16 +1,15 @@
 ## main
 
-$ python main.py -db <db number> -db_rez <db to write rezult number> -h <host default - 127.0.0.1 > -p <port default - 6379> -mask <add special mask>
-keys in any order
 
-    for example 
+***$ python main.py -db <db number> -db_rez <db to write rezult number> -h <host default - 127.0.0.1 > -p <port default - 6379> -mask <add special mask>
+keys in any order***  
 
-***$ python main.py -db 1 -db_rez 10 -h 127.0.0.1 -p 6379 -mask eml -mask qwe.zxc***
     
-  
-running:
+*for example, running:*
+
     
- $ python main.py -db 1 -db_rez 10 -h 127.0.0.1 -p 6379 -mask eml -mask qwe.zxc
+    
+***$ python main.py -db 1 -db_rez 10 -h 127.0.0.1 -p 6379 -mask eml -mask qwe.zxc***    
 
 Will connect to Redis with params (db1,host = 127.0.0.1, port = 6379),write into db 10
 Amount and memory usage of keys of every type (from db 1), keys with masks "eml" and "qwe.zxc" will be written as seporated types
