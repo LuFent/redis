@@ -39,7 +39,7 @@ for key in key_list:
         print(key[12:len(key)] + ':  ' + r.get(key))
         total_count+=int(r.get(key))
 print('===================')
-print('Totla count: ' + str(total_count))
+print('Total count: ' + str(total_count))
 print('===================')
 
 
@@ -54,6 +54,6 @@ for key in key_list:
         total_size+=int(r.get(key))
 
 print('===================')
-print('Totla size: ' + str(round(total_size / (1024 ** m), 1)) + ' ' + units[m])
+print('Total size: ' + str(round(total_size / (1024 ** m), 1)) + ' ' + units[m])
 print('===================')
 
