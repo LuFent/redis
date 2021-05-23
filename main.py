@@ -7,7 +7,7 @@ masks = []
 port = 6379
 host = '127.0.0.1'
 host_rez = '127.0.0.1'
-
+pack_size = 250
 
 for i in range(1,len(sys.argv),2):
     if sys.argv[i] == '-db':
@@ -27,6 +27,9 @@ for i in range(1,len(sys.argv),2):
     
     if sys.argv[i] == '-h_rez':
         host_rez = sys.argv[i + 1]
+        
+    if sys.argv[i] == '-packsize':
+        pack_size = sys.argv[i + 1]
     
 
 
@@ -51,7 +54,7 @@ def batcher(x,n):
 
 
 
-for key_list in batcher(r.scan_iter(), 10):
+for key_list in batcher(r.scan_iter(), pack_size):
     for key in key_list:
 
         key = str(key)       
