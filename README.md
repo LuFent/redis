@@ -3,7 +3,7 @@
 ## main.py
 
 ```
-$ python main.py -db <db number> -db_rez <db to write rezult number> -h <host to db default - 127.0.0.1 > -h_rez <host to db_rez default - 127.0.0.1> -p <port default - 6379> -mask <add special mask>
+$ python main.py -db <db number> -db_rez <db to write rezult number> -h <host to db default - 127.0.0.1 > -h_rez <host to db_rez default - 127.0.0.1> -p <port default - 6379> -mask <add special mask> -packsize <size of packs to scan (25 -  default)>
 ```  
 Keys in any order
 
