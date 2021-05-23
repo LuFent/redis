@@ -7,7 +7,7 @@ masks = []
 port = 6379
 host = '127.0.0.1'
 host_rez = '127.0.0.1'
-pack_size = 250
+pack_size = 200
 
 for i in range(1,len(sys.argv),2):
     if sys.argv[i] == '-db':
