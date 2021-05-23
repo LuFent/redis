@@ -3,7 +3,7 @@
 ## main.py
 
 ```
-$ python main.py -db <db number> -db_rez <db to write rezult number> -h <host default - 127.0.0.1 > -p <port default - 6379> -mask <add special mask>
+$ python main.py -db <db number> -db_rez <db to write rezult number> -h <host to db default - 127.0.0.1 > -h_rez <host to db_rez default - 127.0.0.1> -p <port default - 6379> -mask <add special mask>
 ```  
 Keys in any order
 
@@ -11,7 +11,7 @@ Keys in any order
 
 
 ```    
-$ python main.py -db 1 -db_rez 10 -h 127.0.0.1 -p 6379 -mask eml -mask qwe.zxc
+$ python main.py -db 1 -db_rez 10 -h 127.0.0.1 -p 6379 -mask eml -mask qwe.zxc -h_rez 127.0.0.1
 ````  
 
 
