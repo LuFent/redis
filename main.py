@@ -33,7 +33,8 @@ for i in range(1,len(sys.argv),2):
         pack_size = sys.argv[i + 1]
     
 
-
+pack_size = int(pack_size)
+    
 r = redis.Redis(
         db = num_1,
         host = host,
