@@ -86,7 +86,10 @@ for key_list in batcher(r.scan_iter(), pack_size):
                 if not if_has_digit:
                     short_key = key
 
-
+        if key == 'None':
+            r_dst.incrby('amount__of__' + key ,1)
+            
+        
         if (isinstance(short_key, str)) and key != 'None' and isinstance(mem, int) :
             r_dst.incrby(short_key,mem)
             r_dst.incrby('amount__of__' + short_key ,1)
